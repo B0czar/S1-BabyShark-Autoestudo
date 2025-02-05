@@ -14,7 +14,7 @@ Este projeto é um jogo simples desenvolvido com a biblioteca Phaser. Exercício
 -   `assets/`: Pasta contendo os recursos do jogo, como imagens e áudio.
     -   `bg/`: Imagens de fundo e logos.
     -   `peixes/`: Imagens dos peixes.
-    -   `web/`: Favicon e outros recursos web.
+    -   `web/`: Favicon
 
 ## Como Executar
 

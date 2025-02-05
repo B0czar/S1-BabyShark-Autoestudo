@@ -50,7 +50,7 @@ function create() {
 
     //musica
     Musica = this.sound.add("musica"); //add audio
-    Musica.play({ loop: true }); //da play
+    Musica.play({ loop: true }); //da play em loop
 }
 
 function update() {
