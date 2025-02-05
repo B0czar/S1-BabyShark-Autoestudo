@@ -1,12 +1,18 @@
 var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: window.innerWidth,
+    height: window.innerHeight,
+    parent: "game-container",
 
     scene: {
         preload: preload,
         create: create,
         update: update,
+    },
+
+    scale: {
+        mode: Phaser.Scale.RESIZE, //redimensiona a tela
+        autoCenter: Phaser.Scale.CENTER_BOTH, //centraliza a tela
     },
 };
 

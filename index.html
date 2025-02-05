@@ -3,29 +3,30 @@
 <!-- Define o idioma do documento (inglês) -->
 <html lang="en">
     <head>
-        <!-- Cabeçalho do documento //Define a codificação de caracteres para UTF-8 -->
+        <!-- Cabeçalho do documento -->
+        <!-- Define a codificação de caracteres para UTF-8 -->
         <meta charset="UTF-8" />
-        <!-- Seta o viewport para o tamanho do dispositivo e escala inicial 1. -->
+        <!-- Seta o viewport para o tamanho do dispositivo e escala inicial 1 -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Define o título da página -->
         <title>Baby Shark tututututu... Yuri Boczar</title>
-        <!-- Pesquisei sobre como colocar um favicon-->
+
+        <!-- Define o ícone da aba do navegador (favicon) -->
         <link rel="icon" href="assets/web/favicon.svg" type="image/x-icon" />
 
-        <!-- Corrige a referência ao arquivo de estilo -->
+        <!-- Importa o arquivo de estilo externo -->
         <link rel="stylesheet" href="style.css" />
-        <!-- Importa o arquivo de estilo -->
-        <style src="style.css"></style>
 
         <!-- Importa a biblioteca Phaser -->
         <script src="phaser.js"></script>
     </head>
 
     <body>
-        <!-- Importa o arquivo peixe.js -->
-        <script src="peixe.js"></script>
+        <!-- Cria um container para o jogo -->
+        <div id="game-container"></div>
 
+        <!-- Cria um controle deslizante (slider) para volume -->
         <!-- From Uiverse.io by Galahhad -->
         <label class="slider">
             <input type="range" class="level" />
@@ -43,6 +44,7 @@
                 xml:space="preserve"
             >
                 <g>
+                    <!-- Desenha o ícone de volume -->
                     <path
                         d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z"
                         fill="currentColor"
@@ -56,9 +58,12 @@
                 </g>
             </svg>
         </label>
+
+        <!-- Importa o arquivo peixe.js -->
+        <script src="peixe.js"></script>
     </body>
 
-    <!-- Tarefa adicional -->
+    <!-- Script adicional para exibir uma mensagem no console -->
     <script>
         var resposta =
             "Oi, meu nome é Yuri e essa não foi minha primeira experiência com codigo, mas foi uma das primeiras. Quando eu era mais novo eu fiz uns cursinhos de programação mas eu achava chato, agora eu estou amando. Super divertido juro! :) ";

@@ -1,84 +1,109 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    display: flex; /* Utiliza flexbox para alinhar os elementos filhos */
+    justify-content: center; /* Centraliza horizontalmente os elementos filhos */
+    align-items: center; /* Centraliza verticalmente os elementos filhos */
+    height: 100vh; /* Define a altura do body como 100% da altura da viewport */
+    margin: 0; /* Remove a margem padrão */
 }
 
 html,
 body {
     background-color: #000000; /* Define a cor de fundo como preta */
     margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+    padding: 0; /* Remove o padding padrão */
+    height: 100%; /* Define a altura como 100% */
+    width: 100%; /* Define a largura como 100% */
+    overflow: hidden; /* Remove barras de rolagem */
+}
+
+#game-container {
+    width: 100%; /* Define a largura como 100% */
+    height: 100%; /* Define a altura como 100% */
+    position: relative; /* Necessário para posicionamento absoluto do slider */
 }
 
 /* From Uiverse.io by Galahhad */
 /* level settings 👇 */
 
 .slider {
+    position: absolute;
+    bottom: 10px; /* Distância do fundo da tela */
+    right: 10px; /* Distância da direita da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 10px;
+    border-radius: 10px;
     /* slider */
-    --slider-width: 100%;
-    --slider-height: 6px;
-    --slider-bg: rgb(82, 82, 82);
-    --slider-border-radius: 999px;
+    --slider-width: 100%; /* Largura do slider */
+    --slider-height: 6px; /* Altura do slider */
+    --slider-bg: rgb(23, 21, 77); /* Cor de fundo do slider */
+    --slider-border-radius: 999px; /* Borda arredondada do slider */
     /* level */
-    --level-color: #fff;
-    --level-transition-duration: 0.1s;
+    --level-color: #fff; /* Cor do nível do slider */
+    --level-transition-duration: 0.1s; /* Duração da transição do nível */
     /* icon */
-    --icon-margin: 15px;
-    --icon-color: var(--slider-bg);
-    --icon-size: 25px;
+    --icon-margin: 15px; /* Margem do ícone */
+    --icon-color: var(--slider-bg); /* Cor do ícone */
+    --icon-size: 25px; /* Tamanho do ícone */
 }
 
 .slider {
-    cursor: pointer;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    cursor: pointer; /* Define o cursor como pointer ao passar sobre o slider */
+    display: -webkit-inline-box; /* Define o display como inline-flex para navegadores WebKit */
+    display: -ms-inline-flexbox; /* Define o display como inline-flex para navegadores Microsoft */
+    display: inline-flex; /* Define o display como inline-flex */
+    -webkit-box-orient: horizontal; /* Define a orientação do flexbox como horizontal para navegadores WebKit */
+    -webkit-box-direction: reverse; /* Define a direção do flexbox como reversa para navegadores WebKit */
+    -ms-flex-direction: row-reverse; /* Define a direção do flexbox como reversa para navegadores Microsoft */
+    flex-direction: row-reverse; /* Define a direção do flexbox como reversa */
+    -webkit-box-align: center; /* Alinha os itens ao centro para navegadores WebKit */
+    -ms-flex-align: center; /* Alinha os itens ao centro para navegadores Microsoft */
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+.slider input[type="range"] {
+    width: 100px; /* Largura do controle deslizante */
+    margin-right: 10px;
 }
 
 .slider .volume {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: var(--icon-margin);
-    color: var(--icon-color);
-    width: var(--icon-size);
-    height: auto;
+    display: inline-block; /* Define o display como inline-block */
+    vertical-align: top; /* Alinha verticalmente ao topo */
+    margin-right: var(--icon-margin); /* Define a margem direita do ícone */
+    color: var(--icon-color); /* Define a cor do ícone */
+    width: 24px;
+    height: 24px;
 }
 
 .slider .level {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: var(--slider-width);
-    height: var(--slider-height);
-    background: var(--slider-bg);
-    overflow: hidden;
-    border-radius: var(--slider-border-radius);
-    -webkit-transition: height var(--level-transition-duration);
-    -o-transition: height var(--level-transition-duration);
-    transition: height var(--level-transition-duration);
-    cursor: inherit;
+    -webkit-appearance: none; /* Remove a aparência padrão do slider para navegadores WebKit */
+    -moz-appearance: none; /* Remove a aparência padrão do slider para navegadores Mozilla */
+    appearance: none; /* Remove a aparência padrão do slider */
+    width: var(--slider-width); /* Define a largura do slider */
+    height: var(--slider-height); /* Define a altura do slider */
+    background: var(--slider-bg); /* Define a cor de fundo do slider */
+    overflow: hidden; /* Oculta o conteúdo que transborda */
+    border-radius: var(
+        --slider-border-radius
+    ); /* Define a borda arredondada do slider */
+    -webkit-transition: height var(--level-transition-duration); /* Define a transição da altura para navegadores WebKit */
+    -o-transition: height var(--level-transition-duration); /* Define a transição da altura para navegadores Opera */
+    transition: height var(--level-transition-duration); /* Define a transição da altura */
+    cursor: inherit; /* Herda o cursor do elemento pai */
 }
 
 .slider .level::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
-    -webkit-box-shadow: -200px 0 0 200px var(--level-color);
-    box-shadow: -200px 0 0 200px var(--level-color);
+    -webkit-appearance: none; /* Remove a aparência padrão do thumb do slider para navegadores WebKit */
+    width: 0; /* Define a largura do thumb como 0 */
+    height: 0; /* Define a altura do thumb como 0 */
+    -webkit-box-shadow: -200px 0 0 200px var(--level-color); /* Define a sombra do thumb para navegadores WebKit */
+    box-shadow: -200px 0 0 200px var(--level-color); /* Define a sombra do thumb */
 }
 
 .slider:hover .level {
-    height: calc(var(--slider-height) * 2);
+    height: calc(
+        var(--slider-height) * 1.5
+    ); /* Aumenta a altura do slider ao passar o mouse */
 }
