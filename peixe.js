@@ -1,39 +1,38 @@
+// Configuração do Phaser
 var config = {
-    type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
-    parent: "game-container",
-
+    type: Phaser.AUTO, // Tipo de renderização (AUTO escolhe automaticamente entre WebGL e Canvas)
+    width: window.innerWidth, // Largura do jogo igual à largura da janela
+    height: window.innerHeight, // Altura do jogo igual à altura da janela
+    parent: "game-container", // ID do elemento HTML onde o jogo será inserido
     scene: {
-        preload: preload,
-        create: create,
-        update: update,
+        preload: preload, // Função para carregar os recursos do jogo
+        create: create, // Função para criar os elementos do jogo
+        update: update, // Função para atualizar o jogo a cada frame
     },
-
     scale: {
-        mode: Phaser.Scale.RESIZE, //redimensiona a tela
-        autoCenter: Phaser.Scale.CENTER_BOTH, //centraliza a tela
+        mode: Phaser.Scale.RESIZE, // Redimensiona o jogo automaticamente
+        autoCenter: Phaser.Scale.CENTER_BOTH, // Centraliza o jogo automaticamente
     },
 };
 
-//variaveis do projeto
+// Criação do objeto Phaser.Game com a configuração definida
 var game = new Phaser.Game(config);
-var Logo;
+
+// Declaração das variáveis que serão usadas no jogo
 var Sushi;
 var Musica;
 var Mar;
 
-//funcition that preloads the visual elements of the text
+// Função para carregar os recursos do jogo
 function preload() {
-    this.load.audio("musica", "assets/babyshark.mp3"); //pre load musica de fundo
-    this.load.image("mar", "assets/bg/bg_azul-claro.jpg"); //preload do background
-    this.load.image("sushi", "assets/peixes/tubarao.png"); //preload do peixe
-    this.load.image("logo", "assets/bg/logo.svg"); //o branco ficou ruim.
+    this.load.audio("musica", "assets/babyshark.mp3"); // Carrega o arquivo de áudio
+    this.load.image("mar", "assets/bg/bg_azul-claro.jpg"); // Carrega a imagem de fundo
+    this.load.image("sushi", "assets/peixes/tubarao.png"); // Carrega a imagem do sushi (tubarão)
 }
 
-//function that adds the elements into the game
+// Função para criar os elementos do jogo
 function create() {
-    // Create a tile sprite for the background that repeats to cover the entire screen
+    // Adiciona a imagem de fundo como um tile sprite
     Mar = this.add.tileSprite(
         0,
         0,
@@ -41,29 +40,21 @@ function create() {
         window.innerHeight,
         "mar"
     );
-    Mar.setOrigin(0, 0);
-    Mar.setTint(0xaaaaaa);
+    Mar.setOrigin(0, 0); // Define a origem da imagem no canto superior esquerdo
+    Mar.setTint(0xaaaaaa); // Aplica uma cor de tonalidade à imagem
 
-    //cria a variavel Logo e seta ela como a imagem na esq inferior do bg
-    Logo = this.add.image(
-        window.innerWidth - 100,
-        window.innerHeight - 550,
-        "logo"
-    ); //quis fazer de forma diferente do tutorial
-    Logo.setScale(0.15); //achei muito grande o logo.
-
-    //peixe
+    // Adiciona a imagem do sushi (tubarão)
     Sushi = this.add.image(400, 300, "sushi");
-    Sushi.setScale(0.5); //tava muito grande
-    //musica
-    Musica = this.sound.add("musica"); //add audio
-    Musica.play({ loop: true }); //da play em loop
+    Sushi.setScale(0.5); // Redimensiona a imagem do sushi
+
+    // Adiciona e toca a música em loop
+    Musica = this.sound.add("musica");
+    Musica.play({ loop: true });
 }
 
+// Função para atualizar o jogo a cada frame
 function update() {
+    // Atualiza a posição do sushi para seguir o cursor do mouse
     Sushi.x = this.input.x;
     Sushi.y = this.input.y;
 }
-//Yuri Boczar - GitHub: B0czar
-
-//notas para mim: preciso colocar essa margem preta que tem em volta da barrinha de som no logo para ficar mais legivel.

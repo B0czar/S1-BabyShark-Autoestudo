@@ -9,6 +9,7 @@ Este projeto é um jogo simples desenvolvido com a biblioteca Phaser. Exercício
 ## Estrutura do Projeto
 
 -   `index.html`: Arquivo HTML principal que carrega os scripts e define a estrutura da página.
+-   `style.css`: Arquivo de estilos CSS para a página.
 -   `phaser.js`: Biblioteca Phaser (atualmente vazia, mas deve conter a biblioteca Phaser).
 -   `peixe.js`: Script principal do jogo que configura e inicializa o jogo.
 -   `assets/`: Pasta contendo os recursos do jogo, como imagens e áudio.
@@ -43,3 +44,5 @@ Yuri Boczar - GitHub: [B0czar](https://github.com/B0czar)
 -   Definir título da página.
 -   Exibir mensagem no console.
 -   Tocar música em loop.
+-   Controle do volume da música.
+-   A janela do jogo muda de tamanho conforme o tamanho da janela do computador.

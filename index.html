@@ -1,35 +1,32 @@
-<!-- Indica que o documento é um HTML5 -->
 <!DOCTYPE html>
-<!-- Define o idioma do documento (inglês) -->
 <html lang="en">
     <head>
-        <!-- Cabeçalho do documento -->
-        <!-- Define a codificação de caracteres para UTF-8 -->
+        <!-- Metadados da página -->
         <meta charset="UTF-8" />
-        <!-- Seta o viewport para o tamanho do dispositivo e escala inicial 1 -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <!-- Define o título da página -->
         <title>Baby Shark tututututu... Yuri Boczar</title>
-
-        <!-- Define o ícone da aba do navegador (favicon) -->
+        <!-- Ícone da página -->
         <link rel="icon" href="assets/web/favicon.svg" type="image/x-icon" />
-
-        <!-- Importa o arquivo de estilo externo -->
+        <!-- Link para o arquivo de estilo CSS -->
         <link rel="stylesheet" href="style.css" />
-
-        <!-- Importa a biblioteca Phaser -->
+        <!-- Inclusão do arquivo JavaScript do Phaser -->
         <script src="phaser.js"></script>
     </head>
-
     <body>
-        <!-- Cria um container para o jogo -->
+        <!-- Contêiner do jogo -->
         <div id="game-container"></div>
-
-        <!-- Cria um controle deslizante (slider) para volume -->
-        <!-- From Uiverse.io by Galahhad -->
+        <!-- Adiciona o logo dentro de uma caixinha preta -->
+        <div class="logo-container">
+            <img
+                src="assets/bg/logo.svg"
+                alt="Logo"
+                style="max-width: 250px; height: auto; width: 100%"
+            />
+        </div>
+        <!-- Controle deslizante de volume -->
         <label class="slider">
-            <input type="range" class="level" />
+            <input type="range" class="level" min="0" max="1" step="0.01" />
+            <!-- Ícone de volume em SVG -->
             <svg
                 class="volume"
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +41,6 @@
                 xml:space="preserve"
             >
                 <g>
-                    <!-- Desenha o ícone de volume -->
                     <path
                         d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z"
                         fill="currentColor"
@@ -58,17 +54,20 @@
                 </g>
             </svg>
         </label>
-
-        <!-- Importa o arquivo peixe.js -->
+        <!-- Elemento de áudio -->
+        <audio
+            id="audio"
+            src="assets/audio/baby-shark.mp3"
+            autoplay
+            loop
+        ></audio>
+        <!-- Inclusão do arquivo JavaScript do jogo -->
         <script src="peixe.js"></script>
     </body>
-
-    <!-- Script adicional para exibir uma mensagem no console -->
     <script>
+        // Mensagem de resposta no console
         var resposta =
             "Oi, meu nome é Yuri e essa não foi minha primeira experiência com codigo, mas foi uma das primeiras. Quando eu era mais novo eu fiz uns cursinhos de programação mas eu achava chato, agora eu estou amando. Super divertido juro! :) ";
         console.log(resposta);
     </script>
 </html>
-
-<!-- Yuri Boczar - GitHub: B0czar -->
