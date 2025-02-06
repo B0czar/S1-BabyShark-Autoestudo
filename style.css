@@ -38,7 +38,7 @@ body {
     /* slider */
     --slider-width: 100%; /* Largura do slider */
     --slider-height: 6px; /* Altura do slider */
-    --slider-bg: rgb(23, 21, 77); /* Cor de fundo do slider */
+    --slider-bg: #6693ab; /* Cor de fundo do slider */
     --slider-border-radius: 999px; /* Borda arredondada do slider */
     /* level */
     --level-color: #fff; /* Cor do nível do slider */
