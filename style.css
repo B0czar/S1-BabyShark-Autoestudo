@@ -1,98 +1,87 @@
 body {
-    display: flex; /* Define o layout do corpo como flexível */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    height: 100vh; /* Define a altura do corpo como 100% da altura da janela de visualização */
-    margin: 0; /* Remove a margem padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 html,
 body {
-    background-color: #000000; /* Define a cor de fundo como preto */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o preenchimento padrão */
-    height: 100%; /* Define a altura como 100% */
-    width: 100%; /* Define a largura como 100% */
-    overflow: hidden; /* Oculta as barras de rolagem */
-}
-
-#logo {
-    position: absolute; /* Posiciona o elemento de forma absoluta */
-    top: 0; /* Define a posição superior como 0 */
-    left: 0; /* Define a posição à esquerda como 0 */
-    z-index: 10; /* Define a ordem de empilhamento */
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 #game-container {
-    width: 100%; /* Define a largura como 100% */
-    height: 100%; /* Define a altura como 100% */
-    position: relative; /* Posiciona o elemento de forma relativa */
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .slider {
-    position: absolute; /* Posiciona o elemento de forma absoluta */
-    bottom: 10px; /* Define a posição inferior como 10px */
-    right: 10px; /* Define a posição à direita como 10px */
-    display: flex; /* Define o layout como flexível */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    background: rgba(0, 0, 0, 0.5); /* Define um fundo semi-transparente */
-    padding: 10px; /* Adiciona preenchimento interno */
-    border-radius: 10px; /* Arredonda os cantos */
-    --slider-width: 100%; /* Define a largura do slider */
-    --slider-height: 6px; /* Define a altura do slider */
-    --slider-bg: #6693ab; /* Define a cor de fundo do slider */
-    --slider-border-radius: 999px; /* Define o raio da borda do slider */
-    --level-color: #fff; /* Define a cor do nível */
-    --level-transition-duration: 0.1s; /* Define a duração da transição do nível */
-    --icon-margin: 15px; /* Define a margem do ícone */
-    --icon-color: var(--slider-bg); /* Define a cor do ícone */
-    --icon-size: 25px; /* Define o tamanho do ícone */
-    cursor: pointer; /* Define o cursor como ponteiro */
-    flex-direction: row-reverse; /* Inverte a direção do layout flexível */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    --slider-width: 100%;
+    --slider-height: 6px;
+    --slider-bg: #6693ab;
+    --slider-border-radius: 999px;
+    --level-color: #fff;
+    --level-transition-duration: 0.1s;
+    --icon-margin: 15px;
+    --icon-color: var(--slider-bg);
+    --icon-size: 25px;
+    cursor: pointer;
+    flex-direction: row-reverse;
 }
 
 .slider input[type="range"] {
-    width: 100px; /* Define a largura do input range */
-    margin-right: 10px; /* Adiciona margem à direita */
+    width: 100px;
+    margin-right: 10px;
 }
 
 .slider .volume {
-    display: inline-block; /* Define o display como inline-block */
-    vertical-align: top; /* Alinha verticalmente ao topo */
-    margin-right: var(--icon-margin); /* Adiciona margem à direita */
-    color: var(--icon-color); /* Define a cor do ícone */
-    width: 24px; /* Define a largura do ícone */
-    height: 24px; /* Define a altura do ícone */
+    display: inline-block;
+    vertical-align: top;
+    margin-right: var(--icon-margin);
+    color: var(--icon-color);
+    width: 24px;
+    height: 24px;
 }
 
 .slider .level {
-    -webkit-appearance: none; /* Remove a aparência padrão no WebKit */
-    -moz-appearance: none; /* Remove a aparência padrão no Mozilla */
-    appearance: none; /* Remove a aparência padrão */
-    width: var(--slider-width); /* Define a largura do nível */
-    height: var(--slider-height); /* Define a altura do nível */
-    background: var(--slider-bg); /* Define a cor de fundo do nível */
-    overflow: hidden; /* Oculta o conteúdo que transborda */
-    border-radius: var(
-        --slider-border-radius
-    ); /* Arredonda os cantos do nível */
-    transition: height var(--level-transition-duration); /* Define a transição da altura */
-    cursor: inherit; /* Herda o cursor do elemento pai */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    background: var(--slider-bg);
+    overflow: hidden;
+    border-radius: var(--slider-border-radius);
+    transition: height var(--level-transition-duration);
+    cursor: inherit;
 }
 
 .slider .level::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove a aparência padrão no WebKit */
-    width: 0; /* Define a largura do thumb como 0 */
-    height: 0; /* Define a altura do thumb como 0 */
-    -webkit-box-shadow: -200px 0 0 200px var(--level-color); /* Define a sombra do thumb no WebKit */
-    box-shadow: -200px 0 0 200px var(--level-color); /* Define a sombra do thumb */
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+    box-shadow: -200px 0 0 200px var(--level-color);
 }
 
 .slider:hover .level {
-    height: calc(
-        var(--slider-height) * 1.5
-    ); /* Aumenta a altura do nível ao passar o mouse */
+    height: calc(var(--slider-height) * 1.5);
 }
 
 .logo-container {

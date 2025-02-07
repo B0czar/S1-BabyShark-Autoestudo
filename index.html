@@ -25,7 +25,14 @@
         </div>
         <!-- Controle deslizante de volume -->
         <label class="slider">
-            <input type="range" class="level" min="0" max="1" step="0.01" />
+            <input
+                type="range"
+                class="level"
+                id="volumeControl"
+                min="0"
+                max="1"
+                step="0.1"
+            />
             <!-- Ícone de volume em SVG -->
             <svg
                 class="volume"
@@ -69,5 +76,15 @@
         var resposta =
             "Oi, meu nome é Yuri e essa não foi minha primeira experiência com codigo, mas foi uma das primeiras. Quando eu era mais novo eu fiz uns cursinhos de programação mas eu achava chato, agora eu estou amando. Super divertido juro! :) ";
         console.log(resposta);
+
+        // Controle de volume
+        const audio = document.getElementById("audio");
+        const volumeControl = document.getElementById("volumeControl");
+
+        // Adiciona um evento de entrada para o controle deslizante de volume
+        volumeControl.addEventListener("input", function () {
+            // Ajusta o volume do áudio conforme o valor do controle deslizante
+            audio.volume = volumeControl.value;
+        });
     </script>
 </html>
